@@ -1,26 +1,21 @@
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-  <mat-grid-list cols="1" rowHeight="80px">
-    <mat-grid-tile
-      ><mat-form-field>
+<mat-card class="card-login">
+  <mat-card-header>
+    <mat-card-title>Ingresa al sistema</mat-card-title>
+    <mat-card-subtitle>Ingresa tu correo y contrasena!</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <mat-form-field class="form-field-login">
         <mat-label>Email</mat-label>
-        <input matInput formControlName="email" /> </mat-form-field
-    ></mat-grid-tile>
-    <mat-grid-tile>
-      <mat-form-field>
+        <input matInput formControlName="email" />
+      </mat-form-field>
+      <mat-form-field class="form-field-login">
         <mat-label>Password</mat-label>
         <input matInput type="password" formControlName="password" />
       </mat-form-field>
-    </mat-grid-tile>
-    <mat-grid-tile
-      ><button mat-raised-button type="submit">Login</button></mat-grid-tile
-    >
-    <mat-grid-tile>
-      <p>
-        Aún no tienes una cuenta, puedes crear una
-        <button mat-button color="primary" routerLink="/auth/register">
-          aquí
-        </button>
-      </p>
-    </mat-grid-tile>
-  </mat-grid-list>
-</form>
+      <mat-card-actions>
+        <button mat-raised-button type="submit">Ingresar</button>
+      </mat-card-actions>
+    </form>
+  </mat-card-content>
+</mat-card>

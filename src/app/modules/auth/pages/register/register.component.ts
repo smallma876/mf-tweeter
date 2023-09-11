@@ -1,13 +1,13 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.sass'],
+  styleUrls: ['./register.component.scss'],
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
 
   constructor(
@@ -15,10 +15,16 @@ export class RegisterComponent {
     private http: HttpClient
   ) {
     this.registerForm = this.fb.group({
+      profileImageUrl: ['', [Validators.required]],
+      username: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
       birthDate: [''],
     });
+  }
+
+  ngOnInit(): void {
+    console.log('RegisterComponent initialized');
   }
 
   onSubmit() {

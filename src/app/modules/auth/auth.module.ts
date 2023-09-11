@@ -11,6 +11,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [LoginComponent, RegisterComponent],
@@ -23,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatCardModule,
     HttpClientModule,
     MatGridListModule,
   ],

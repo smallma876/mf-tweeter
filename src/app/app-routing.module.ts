@@ -7,6 +7,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/auth/auth.module').then((m) => m.AuthModule),
   },
+  {
+    path: 'tweet',
+    loadChildren: () =>
+      import('./modules/tweet/tweet.module').then((m) => m.TweetModule),
+  },
   { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
 ];
 
